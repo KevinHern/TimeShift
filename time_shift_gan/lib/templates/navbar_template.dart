@@ -38,7 +38,7 @@ class NavBarTemplate {
     ];
   }
 
-  static buildBottomNavBar(NavBar navBar, List<BottomNavigationBarItem> bitems, Function onTapFunction, Widget FAB, Widget returnScreen){
+  static buildBottomNavBar(NavBar navBar, List<BottomNavigationBarItem> bItems, Function onTapFunction, Widget fab, Widget returnScreen){
     return new Scaffold(
       extendBody: true, //Transparent Notch
       bottomNavigationBar: new BottomAppBar(
@@ -49,14 +49,14 @@ class NavBarTemplate {
           backgroundColor: _bottomNavBarColor,
           unselectedItemColor: new Color(0xFFFFFFFF).withOpacity(0.6),
           selectedItemColor: Colors.white,
-          items: bitems,
+          items: bItems,
           onTap: (index) {
             onTapFunction(index);
           },
           currentIndex: navBar.getNavIndex(),
         ),
       ),
-      floatingActionButton: FAB,
+      floatingActionButton: fab,
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       body: returnScreen,
     );
